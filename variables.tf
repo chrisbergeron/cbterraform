@@ -1,0 +1,1 @@
+variable "db_password" {}
