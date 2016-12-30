@@ -17,7 +17,7 @@ terraform plan -var "do_token=${DO_PAT}" -var "pub_key=$HOME/.ssh/id_rsa.pub" -v
 Actual deployment via terraform:
 terraform apply -var "do_token=${DO_PAT}" -var "pub_key=$HOME/.ssh/id_rsa.pub" -var "pvt_key=$HOME/.ssh/id_rsa_decrypted" -var "ssh_fingerprint=$SSH_FINGERPRINT"
 
-
+-----------------------------
 
 Destroying infrastructure via terraform
 
@@ -30,6 +30,11 @@ Generate the execution plan
 
 2) terraform apply terraform.tfplan
 
+or
+
+terraform destroy -var "do_token=${DO_PAT}" -var "pub_key=$HOME/.ssh/id_rsa.pub" -var "pvt_key=$HOME/.ssh/id_rsa_decrypted" -var "ssh_fingerprint=$SSH_FINGERPRINT"
+
+-----------------------------
 
 Generating SSH_FINGERPRINT on OS X El Capitan:
 ssh-keygen -E md5 -lf ~/.ssh/id_rsa
