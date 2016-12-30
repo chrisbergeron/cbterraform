@@ -19,7 +19,10 @@ provisioner "remote-exec" {
       "sudo yum -y update",
       "sudo yum -y install epel-release",
       "sudo yum -y install nginx",
-      "sudo systemctl start nginx"
+      "sudo systemctl start nginx",
+      "sudo wget https://github.com/digitalocean/doctl/releases/download/v1.5.0/doctl-1.5.0-linux-amd64.tar.gz",
+      "sudo tar xvfz doctl-1.5.0-linux-amd64.tar.gz",
+      "sudo mv doctl /usr/local/bin"
     ]
   }
 }

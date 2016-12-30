@@ -29,6 +29,11 @@ provisioner "remote-exec" {
       "sudo sed -i 's/WWW_1_PRIVATE_IP/${digitalocean_droplet.www-1.ipv4_address_private}/g' /etc/haproxy/haproxy.cfg",
       "sudo sed -i 's/WWW_2_PRIVATE_IP/${digitalocean_droplet.www-2.ipv4_address_private}/g' /etc/haproxy/haproxy.cfg",
 
+      # get doctl for Ubuntu
+      "sudo wget https://github.com/digitalocean/doctl/releases/download/v1.5.0/doctl-1.5.0-linux-amd64.tar.gz",
+      "sudo tar xvfz doctl-1.5.0-linux-amd64.tar.gz",
+      "sudo mv doctl /usr/local/bin",
+
       # restart haproxy to load changes
       "sudo service haproxy restart"
     ]
