@@ -18,7 +18,7 @@ provisioner "remote-exec" {
       "export PATH=$PATH:/usr/bin",
       # install haproxy 1.5
       "sudo add-apt-repository -y ppa:vbernat/haproxy-1.5",
-      "sudo apt-get update",
+      "sudo apt-get -y update",
       "sudo apt-get -y install haproxy",
 
       # download haproxy conf
