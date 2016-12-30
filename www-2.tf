@@ -17,8 +17,9 @@ provisioner "remote-exec" {
     inline = [
       "export PATH=$PATH:/usr/bin",
       # install nginx
-      "sudo yum update",
+      "sudo yum -y update",
       "sudo yum -y install nginx"
+      "sudo systemctl start nginx"
     ]
   }
 }
