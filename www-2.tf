@@ -1,7 +1,7 @@
 resource "digitalocean_droplet" "www-2" {
     image = "centos-7-2-x64"
     name = "www-2"
-    region = "nyc2"
+    region = "nyc1"
     size = "512mb"
     private_networking = true
     ssh_keys = [

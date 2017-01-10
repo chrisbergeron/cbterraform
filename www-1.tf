@@ -1,7 +1,7 @@
 resource "digitalocean_droplet" "www-1" {
     image = "centos-7-2-x64"
     name = "www-1"
-    region = "nyc2"
+    region = "nyc1"
     size = "512mb"
     private_networking = true
     ssh_keys = [
@@ -27,10 +27,10 @@ provisioner "remote-exec" {
       "sudo yum -y install mariadb-server mariadb",
       "sudo systemctl start mariadb",
       "sudo mysql -e \"UPDATE mysql.user SET Password=PASSWORD('test') WHERE User='root';\"",
-      #"sudo mysql -e \"DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');\"",
+      "sudo mysql -e \"DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');\"",
       #"sudo mysql -e \"DELETE FROM mysql.user WHERE User='';\"",
-      #"sudo mysql -e \"DROP DATABASE test;\"",
-      #"sudo mysql -e \"FLUSH PRIVILEGES;\"",
+      "sudo mysql -e \"DROP DATABASE test;\"",
+      "sudo mysql -e \"FLUSH PRIVILEGES;\"",
       "sudo systemctl enable mariadb"
     ]
   }

@@ -1,7 +1,7 @@
 resource "digitalocean_droplet" "haproxy-www" {
     image = "ubuntu-14-04-x64"
     name = "haproxy-www"
-    region = "nyc2"
+    region = "nyc1"
     size = "512mb"
     private_networking = true
     ssh_keys = [
