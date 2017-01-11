@@ -4,6 +4,7 @@ resource "digitalocean_droplet" "www-1" {
     region = "nyc1"
     size = "512mb"
     private_networking = true
+    #volume_ids = ["${digitalocean_volume.volume-nyc1-01.0dd47f70-d776-11e6-8f8d-000f53315871}"]
     ssh_keys = [
       "${var.ssh_fingerprint}"
     ]
